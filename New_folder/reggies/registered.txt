@@ -1,0 +1,11 @@
+
+abc | abc | womanman | 18 | 25
+ |  | womanman | 18 | 19
+ |  | womanman | 18 | 19
+ |  | womanman | 18 | 19
+ |  | womanman | 18 | 19
+ |  | womanman | 18 | 19
+cdfggg | gfhu | man | 18 | 
+ffyg |  | woman | 26 | 
+dfad |  | man | 18 | 
+ |  |  |  | 

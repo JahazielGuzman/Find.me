@@ -1,0 +1,117 @@
+/* SEARCH --------------------------------------------------------*/
+
+ul {
+     list-style-type: none;
+     float:left;
+     padding: 0px;
+     box-shadow: 5px 5px 15px -9px;
+}
+
+.groupsp {
+     height: 155px;
+     overflow: auto;
+     margin: 1px;
+   }
+
+.top-search{
+	position: absolute;
+	top: 125px;
+	right: 175px;
+}
+
+#searchform #s{
+	color: #7e7e7e;
+	font-size: 10px;
+	width: 180px;
+	height: 28px;
+	padding: 0px 35px 0px 10px;
+	border: 0;
+	background: url(../img/search.png) no-repeat transparent;	
+}
+
+#searchform #searchsubmit{
+	
+	width: 30px;
+	height: 25px;
+	border: 0px;
+	background: transparent;
+}
+
+/* SCROLL BOX ---------------------------------------------------------*/
+.scroll-box {
+	height: 150px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+
+/* YOUR GROUP ---------------------------------------------------------*/
+
+.your-group {
+	
+	width:295px;
+	
+}
+
+/* POPULAR GROUP ---------------------------------------------------------*/
+
+.popular-group {
+	
+	width: 420px;
+	
+	margin-left: 285px;
+}
+
+#popgroups {
+     height: 155px;
+}
+
+/* GROUP SETTINGS---------------------------------------------------------*/
+
+.group-settings {
+	
+	width: 200px;
+	
+	border:thick;	
+}
+
+#settings {
+	line-height: 30px;
+}
+
+/* GROUPS        ---------------------------------------------------------*/
+
+.groups {
+	
+	width: 420px;
+	
+	margin-left: 380px;
+}
+
+
+/* GENERAL ------------------------------------------------------------*/
+
+#caption {
+	color:#FFFFFF;
+	font-family: helvetica;
+	font-size:23px;
+	height:28px;
+	background: #2774b8;
+	border: 0px;	
+}
+
+.listop {
+
+     padding-top: 10px;
+     
+}
+
+#invite {
+
+     list-style-type: none;
+     display: none;
+     padding: 0px;
+     position: absolute;
+     margin: 0px auto 0px auto;
+     background-color: white;
+}

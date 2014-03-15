@@ -1,0 +1,98 @@
+a:link {
+text-decoration: none;
+color: #6666CC;
+}
+
+a:visited {
+color: #6666CC;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+div.messageoptions {
+
+font-weight: bold;
+text-align:right;
+width: 100px;
+color: #6666CC;
+}
+
+div.messageoptions  > a {
+
+font-weight: bold;
+color:#A8A8A8;
+}
+
+#messer {
+     float:left;
+}
+
+#display_box {
+
+     float:left;
+     text-align: center;
+     font-size: 14px;
+}
+
+#display_mess {
+
+     height: 400px !important;
+     overflow: auto !important;
+     width: 800px !important;
+     
+}
+
+.contact_nav {
+     float: left;
+     display: inline-table;
+}
+
+#contact_content {
+     float:left;
+     height: 500px;
+     width: 800px;
+     overflow: auto;
+     display: inline-table;
+}
+
+.mess_pic {
+     border:0;
+}
+
+form.mess_tas {
+     background-color: rgb(247, 247, 247) !important;
+     border-radius: 0px 0px 5px 5px !important;
+}
+
+.mess_is {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fed897;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fed897;
+	box-shadow:inset 0px 1px 0px 0px #fed897;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffcc00), color-stop(1, #ffaa00) );
+	background:-moz-linear-gradient( center top, #ffcc00 5%, #ffaa00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcc00', endColorstr='#ffaa00');
+	background-color:#ffcc00;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	border:1px solid #eda933;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #cd8a15;
+}
+.mess_is:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1965c2), color-stop(1, #3d78b4) );
+	background:-moz-linear-gradient( center top, #1965c2 5%, #3d78b4 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1965c2', endColorstr='#3d78b4');
+	background-color:#1965c2;
+}
+.mess_is:active {
+	position:relative;
+	top:-1px;
+}

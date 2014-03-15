@@ -1,0 +1,23 @@
+
+<div id="contain_crop" style="background-color:white;display:none;">
+<img class="crop_box" id="crop" src="" style="float:left;" />
+<p style="
+    text-align: center;
+    font-size: 22px;
+    color: rgb(119, 119, 119);
+">
+Please select your thumbnail
+<br>
+<button id="finish">Finish</button> <button>go back</button>
+</p>
+</div>
+<a id="picture_upload_tool" >
+Upload a picture:
+</a>
+<form  style="position:absolute; border: 0px auto 0px auto; z-index: 5px;" name="upload_pic" id="upload_form">
+<input type="hidden" name="MAX_FILE_SIZE" value="5242880">
+<input type="file" id="user_pic" name="user_pic" accept="image/gif|image/jpeg|image/png"/>
+<button type="submit" id="upload_button">upload</button>
+</form>
+<div style="margin-top:40px;" id="display_pics">
+</div>

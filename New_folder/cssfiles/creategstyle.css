@@ -1,0 +1,75 @@
+
+/* CREATE A GROUP   -----------------------------------------------------*/
+
+#table-caption {
+	color:#FFFFFF;
+	font:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	height:22px;
+	background: #2774b8;
+	border-radius: 15px 15px 0px 0px;
+}
+
+.groupName {
+	width: 250px;
+	height: 16px;
+	padding: 3px;
+}
+
+.members {
+	width: 50px;
+	height: 16px;
+	padding: 3px;
+}
+
+.description {
+	width: 120px;
+	height: 16px;
+	padding: 3px;
+}
+
+/* GROUP  ------------------------------------------------------------*/
+
+.group-div {
+	width: 1000px;
+}
+
+#group-caption {
+	color:#FFFFFF;
+	font:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	height:22px;
+	width: 150px;
+	background: #2774b8;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.group-pic {
+	position: absolute;
+	top: 150px;
+	left: 170px;
+	width:295px;
+	height:200px;
+}
+
+.join-group {	width: 100px;
+	height:200px;
+}
+
+.inside-settings {
+	position: absolute;
+	top: 400px;
+	left: 700px;
+	width: 200px;
+	height:200px;
+}
+
+
+
+.create_group_label{
+	display:inline-block;
+	width:70px;
+	padding-right:10px;
+	text-align:right;
+}
+
