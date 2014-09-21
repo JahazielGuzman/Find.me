@@ -1,0 +1,5 @@
+rewriteengine on
+rewritecond %{HTTPS} off
+rewritecond %{HTTP_HOST} ^www.teeckle.me$ [OR]
+rewritecond %{HTTP_HOST} ^teeckle.me$
+rewriterule ^login_register\.php(.*)$ "https\:\/\/teeckle\.me\/login_register\.php$1" [R=302,L] #507a1c9df0658

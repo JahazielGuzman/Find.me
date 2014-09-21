@@ -1,0 +1,113 @@
+
+p.description {
+
+width: 700px;
+font-size: 24px;
+margin-left: 155px;
+}
+
+fieldset.login {
+
+font-size: 16px;
+float: left;
+border: 1px solid black;
+text-align: right;
+margin: 0px 50px 0px 99px;
+padding: 0px 50px 0px 50px;
+}
+
+label.error {
+
+color: red;
+}
+
+legend {
+
+font-size: 16px;
+padding: 0px 50px 0px 50px;
+}
+
+input.submit {
+
+border: 1px outset #0066CC;
+background-color: #0066CC;
+font-size: 18px;
+margin-right: 5px;
+padding: 2px 7px 2px 7px;
+color: white;
+text-shadow: 1px 1px 1px black;
+box-shadow: 0px 0px 0px blue;
+min-width: 150px;
+max-width: 150px;
+}
+
+input.submit:active {
+
+border:1px inset #330099;
+background-color: #006699;
+}
+
+fieldset.register {
+
+font-size: 16px;
+float: left;
+border: 1px solid black;
+text-align: right;
+margin: 0px 50px 0px 50px;
+}
+
+select#registersex {
+
+margin-right: 113px;
+margin-bottom: 4px;
+}
+
+#email {
+
+margin-right: 2px;
+}
+
+#birth_day {
+
+margin-right: 4px;
+}
+
+div.birth_info {
+
+display:inline;
+margin-right: 11px;
+margin-bottom: 4px;
+}
+
+select[name="birth_month"] {
+
+margin-bottom: 4px;
+margin-right: 4px;
+}
+
+input {
+
+border:1px groove #A8A8A8;
+padding: 3px; 
+font-size: 12px;
+min-width: 171px;
+max-width: 171px;
+margin-bottom: 4px;
+margin-right: 6px;
+}
+
+select {
+
+background-color: #F8F8F8;
+border:1px inset #A8A8A8;
+padding: 3px; 
+font-size: 12px;
+}
+
+div.footer {
+
+text-align: center;
+width: 1000px;
+margin: 90px auto 0px auto;
+}
+
