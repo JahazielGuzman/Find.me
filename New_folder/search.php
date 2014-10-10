@@ -1,38 +1,54 @@
 <?php
 
      session_start();
+     // access to database
      require_once (__DIR__.'/php_files/connect.php');
+     
+     // if the user is currently logged in
      if (strlen($_SESSION['teeckle_user']) > 0) {
-            
-     $date = date("d,m,Y H:i:s");
-     $sql = "UPDATE sessions SET upd = ? WHERE ip = ?";
+          
+          // update the last time the user was on the site  
+          $date = date("d,m,Y H:i:s");
+          $sql = "UPDATE sessions SET upd = ? WHERE ip = ?";
       
-      try {
-          $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn -> prepare($sql); 
-          $stmt->execute(array($date,$_SERVER['REMOTE_ADDR']));
+          try {
+      	  
+               $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
+               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $stmt = $conn -> prepare($sql); 
+              $stmt->execute(array($date,$_SERVER['REMOTE_ADDR']));
+          }
+     
+          catch (PDOException $e) {
+               die ($e->getMessage());
+          }
+     
+          $curruser = $_SESSION['teeckle_user'];
      }
-     catch (PDOException $e) {
-          die ($e->getMessage());
-     }
-     $curruser = $_SESSION['teeckle_user'];
-}
-else {
-      $sql = "DELETE FROM sessions WHERE ip = ?";
-      try {
-          $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn -> prepare($sql); 
-          $stmt->execute(array($_SERVER['REMOTE_ADDR']));
-          echo 'hi '.$_SESSION['teeckle_user'];
-            exit;
-     }
-     catch (PDOException $e) {
-          die ($e->getMessage());
-     }
+     
+     else {
+     	
+          // assume user is no longer on website
+          $sql = "DELETE FROM sessions WHERE ip = ?";
+      
+          try {
+               
+               $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
+               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $stmt = $conn -> prepare($sql); 
+               $stmt->execute(array($_SERVER['REMOTE_ADDR']));
+               
+               echo 'hi '.$_SESSION['teeckle_user'];
+               exit;
+          }
+          catch (PDOException $e) {
+         
+               die ($e->getMessage());
+          }
 
      }
+     
+     // use the current users zip code when they search for someone
      $sql = "SELECT zipcode FROM TeeckleUserProfile where teeckleUsern = ?";
     
      try {
