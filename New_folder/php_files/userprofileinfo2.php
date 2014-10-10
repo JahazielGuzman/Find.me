@@ -1,5 +1,7 @@
 <?php
      
+     // the user is visiting this page, display the info for the profile the user is
+     // visiting
      $userprofile = $_POST['visited'];
      
      $sql = "SELECT dob,gender,zipcode,orientation,opento,ethnicity,bodytype,
@@ -7,9 +9,9 @@
      require 'connect.php';
      @ $con = new mysqli($host,$DBusername,$DBpassword,$dbn);
      if ($con -> connect_errno) {
-     die ('it happened');
+     die ('connection error');
      }
-     $stmt = $con -> prepare ($sql) or die ('sup dude');
+     $stmt = $con -> prepare ($sql) or die ('couldnt prepare');
      $stmt -> execute ();
      $gender;
      $zipcode;
