@@ -1,37 +1,49 @@
 <?php
-       session_start();
-       require_once ('/home/content/24/9456524/html/php_files/connect.php');
-       if (isset($_SESSION['teeckle_user'])) {
-            
-     $date = date("d,m,Y H:i:s");
-     $sql = "UPDATE sessions SET upd = ? WHERE ip = ?";
+     session_start();
+     require_once ('/home/content/24/9456524/html/php_files/connect.php');
+     
+     // check if user is logged in
+     if (isset($_SESSION['teeckle_user'])) {
+          
+          // update the time the user is logged in  
+          $date = date("d,m,Y H:i:s");
+          $sql = "UPDATE sessions SET upd = ? WHERE ip = ?";
       
-      try {
-          $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn -> prepare($sql); 
-          $stmt->execute(array($date,$_SERVER['REMOTE_ADDR']));
-     }
-     catch (PDOException $e) {
-          die ($e->getMessage());
-     }
+          try {
+          
+               $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
+               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $stmt = $conn -> prepare($sql); 
+               $stmt->execute(array($date,$_SERVER['REMOTE_ADDR']));
+          }
+          
+          catch (PDOException $e) {
+               die ($e->getMessage());
+          }
      $userreg = $_SESSION['teeckle_user'];
-}
-else {
-      $sql = "DELETE FROM sessions WHERE ip = ?";
-      try {
-          $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn -> prepare($sql); 
-          $stmt->execute(array($_SERVER['REMOTE_ADDR']));
-          header ('Location: /index.php');
-            exit;
-     }
-     catch (PDOException $e) {
-          die ($e->getMessage());
      }
 
+     else {
+     	
+          $sql = "DELETE FROM sessions WHERE ip = ?";
+        
+          try {
+          	
+               $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername,$DBpassword);
+               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $stmt = $conn -> prepare($sql); 
+               $stmt->execute(array($_SERVER['REMOTE_ADDR']));
+               
+               header ('Location: /index.php');
+               exit;
+          }
+     
+          catch (PDOException $e) {
+               die ($e->getMessage());
+          }
+
      }
+     
      $userdef = htmlentities($_SESSION['teeckle_user']);
      
 
@@ -39,8 +51,11 @@ else {
           $userdef = htmlentities($_POST['visited']);
      }
      
+     // get the thumbnail for the profile picture of the current user
      $sql = "SELECT thumbnail FROM pic_table WHERE defaultpic = 1 AND user = ?";
+     
      require_once '/home/content/24/9456524/html/php_files/connect.php';
+     
      try {
           $conn = new PDO('mysql:host='.$host.';dbname='.$dbn, $DBusername, $DBpassword);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -48,6 +63,7 @@ else {
           $stmt->execute(array($userdef));
           $result = $stmt -> fetch();
      }
+     
      catch (PDOException $e) {
           die ($e);
      }
@@ -74,16 +90,18 @@ else {
     var curruser = "<?php echo $userreg; ?>";
     $(function () {
 
+	 // update the current time in a variable
          var today = new Date();
          today = today.getFullYear();
          var this_year = today - 18;
          var start = today - 100;
          
-		$( "#datepick" ).datepicker({
-			changeMonth: true,
-			changeYear: true,
-			yearRange: start + ':' + this_year
-		});
+              // change the tume a user can select on the datepicker
+       	      $( "#datepick" ).datepicker({
+         	   changeMonth: true,
+		   changeYear: true,		
+		   yearRange: start + ':' + this_year
+	      });
 		
 	     
 	});
