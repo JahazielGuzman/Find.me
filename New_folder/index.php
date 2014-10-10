@@ -22,11 +22,17 @@
     </script>
     <script>
     $(function() {
+    
+         // hide the log in box and display it when the
+         // user wants to log in
          $(".login").hide();
 
          $("#login").click(function () {
               $(".login").show();
          })
+         
+         // update todays date in a cariable
+         // set the range for valid birthdays
          var today = new Date();
          today = today.getFullYear();
          var this_year = today - 18;
